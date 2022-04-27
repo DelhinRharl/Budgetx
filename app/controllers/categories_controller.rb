@@ -13,8 +13,6 @@ class CategoriesController < ApplicationController
   end
 
   def show
-     @categories = current_user.categories.order(created_at: :desc).all
-    @category = Category.includes(:categories_expenses).find(params[:id])
   end
 
   def new
