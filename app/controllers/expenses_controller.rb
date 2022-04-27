@@ -1,6 +1,7 @@
 class ExpensesController < ApplicationController
   def index
-    @category = @categories.find(params[expense_params])
+    @categories = current_user.categories.order(created_at: :desc).all
+    @category = @categories.find(1)  
     @expense = Expense.all
   end
 
@@ -13,7 +14,7 @@ class ExpensesController < ApplicationController
     @new_expense = current_user.expenses.new(expense_params)
     @categories = Category.all
     if @new_expense.save
-      CategoriesExpense.create(category_id: params[:category_id], expense_id: @new_expense.id)
+      CategoriesExpense.create(category_id:@new_expense.category_id, expense_id: @new_expense.id)
       redirect_to expenses_path(params[:category_id]), flash: { success: "Expense added successfully" }
     else
       redirect_to new_category_expense_path, notice: "Expense failed"

@@ -1,5 +1,5 @@
 <div class="flex flex-col">
-<%= form_with  model: @expense , url: categories_path do |t|%>
+<%= form_with  model: @expense , url: expenses_path do |t|%>
     <%= t.select  :category_id, @category.map {|cat| [cat.name, cat.id]},{} %>
     <%= t.label :name %>
     <%= t.text_field :name %>
