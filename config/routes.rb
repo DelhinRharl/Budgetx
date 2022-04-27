@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get '/', to: 'users#index'
   get '/users', to: 'categories#index'
 
-    resources :categories do
-      resources :expenses
-    end
+    resources :categories 
+    resources :expenses
 end
