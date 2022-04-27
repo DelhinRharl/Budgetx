@@ -1,0 +1,11 @@
+<div>
+ <h4>Categories page </h4>
+<div> 
+ <%= @categories.each do| cate|%>
+ <%= link_to category_expenses_path([:category_id]) do %>
+  <p> <%= cate.name %>  added on <%= cate.created_at %> </p>
+  <% end %>
+  <% end %>
+  </div>
+  <%= link_to"add category ", new_category_path, class:'border border-black p-2 rounded-lg cursor-pointer hover:opacity-60'%>
+</div>

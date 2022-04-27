@@ -1,0 +1,8 @@
+<div>
+ <h2 class="bg-teal-500">All Transactions</h4>
+ <h2><%= @expense.name%></h2>
+ <div>
+  <%= @expense.name %> added on <%= @expense.created_at %>    <%= @expense.amount %>
+    <%= link_to"add a Transaction ", new_expense_path, class:'border border-black p-2 rounded-lg cursor-pointer hover:opacity-60'%>
+  
+</div>

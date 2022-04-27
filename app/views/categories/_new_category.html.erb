@@ -1,0 +1,8 @@
+<%= form_with model: @category do |cat| %>
+    <%= cat.label :name %>
+    <%= cat.text_field :name %>
+    <%= cat.label :icons %>
+    <%= cat.text_field :icon %>
+     
+    <%= cat.submit %>
+<% end %>
