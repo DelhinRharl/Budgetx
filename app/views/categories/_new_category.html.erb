@@ -1,7 +1,9 @@
 <%= form_with model: @category do |cat| %>
     <%= cat.label :name %>
-    <%= cat.text_field :name %>
+    <%= cat.text_field :name, require:true %>
     <%= cat.label :icons %>
-    <%= cat.text_field :icon %>
+    <%= cat.text_field :icon, require:true %>
     <%= cat.submit %>
+
+    <%= link_to "Back", categories_path  %>
 <% end %>

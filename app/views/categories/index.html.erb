@@ -1,11 +1,19 @@
 <div>
  <h4>Categories page </h4>
+  <% if @categories.empty? %>
+  <p>No categories yet!</p>
+  <% else %>
  <%= @categories.each do| cate|%>
-<div class="max-h-full border-2 h-40 justify-center flex"> 
- <%= link_to categories_path([:category_id]) do %>
-  <p> <%= cate.name %>  added on <%= cate.created_at.strftime('%Y.%m.%d') %> </p>
+<div class=" border-2 h-40 mb-3 justify-center flex"> 
+ <%= link_to category_path(cate.id) do %>
+ <%= @category.each  do | i|%>
+ <img <%= i.icon alt: 'icon' %> class="h-10 w-10 rounded-full " >
+    <%end%>
+  <p class="text-xl"> <%= cate.name %>  added on <%= cate.created_at.strftime('%Y.%m.%d') %> </p>
    </div>
   <% end %>
   <% end %>
-  <%= link_to"add category ", new_category_path, class:'border border-black p-2 rounded-lg cursor-pointer hover:opacity-60'%>
+  <% end %>
+
+  <%= link_to"add category ", new_category_path, class:'border border-black p-1  rounded-sm cursor-pointer hover:opacity-60'%>
 </div>

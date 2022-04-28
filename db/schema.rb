@@ -26,8 +26,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_27_135525) do
   create_table "categories_expenses", force: :cascade do |t|
     t.bigint "expense_id", null: false
     t.bigint "category_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_categories_expenses_on_category_id"
     t.index ["expense_id"], name: "index_categories_expenses_on_expense_id"
   end

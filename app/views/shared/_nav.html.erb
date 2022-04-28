@@ -1,7 +1,7 @@
-<nav class="flex flex-col">
+<nav class="flex flex-col bg-blue-500 h-20 items-end rounded-lg text-white">
     <ul class="flex gap-4 items-center">
       <% if current_user %>
-        <li>Signed in as <%= current_user.name%><span class="font-bold">,</span></li>
+        <li  class="font-bold">Bienvenue,<%= current_user.name%><span>,</span></li>
         <li><%= button_to "Sign out", destroy_user_session_path, method: :delete, class: 'hover:opacity-60'  %></li>
       <% else %>
         <li><%= link_to "Sign in", new_user_session_path, class: 'hover:opacity-30' %></li>

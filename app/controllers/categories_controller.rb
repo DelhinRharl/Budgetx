@@ -2,17 +2,19 @@ class CategoriesController < ApplicationController
   def index
     @categories = current_user.categories.order(created_at: :desc).all
     @total_amount = []
-
+       @category = Category.includes(:categories_expenses).where(id: params[:id])
     @categories.each do |category|
       total = 0
-      category.categories_expenses.order(created_at: :desc).each do |category_expense|
-        total += category_expense.expense.amount
+      category.categories_expenses.each do |categories_expense|
+        total += categories_expense.expense.amount
       end
       @total_amount.push(total)
     end
   end
 
   def show
+    @expense = Expense.includes(:categories_expenses).where(id: params[:id])
+    @category = Category.includes(:categories_expenses).where(id: params[:id])
   end
 
   def new

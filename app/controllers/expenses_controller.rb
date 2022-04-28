@@ -1,7 +1,7 @@
 class ExpensesController < ApplicationController
   def index
     @categories = current_user.categories.order(created_at: :desc).all
-    @category = @categories.find(1)  
+    @category = Category.includes(:categories_expenses).where(id: params[:category_id]) 
     @expense = Expense.all
   end
 
@@ -22,6 +22,6 @@ class ExpensesController < ApplicationController
   end
 
   def expense_params
-    params.require(:expense).permit(:name, :amount, :category_id)
+    params.require(:expense).permit(:name, :amount,:category_id)
   end
 end

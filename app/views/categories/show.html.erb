@@ -1,0 +1,13 @@
+<div>
+ <h2 class="bg-teal-500">All Transactions</h4>
+ <%= @expense.each_with_index do | x, index|%>
+  <%= @category.each  do | i|%>
+ <img <%= i.icon%> class="h-28 w-28 rounded-sm mr-2" >
+    <%end%> 
+ <h2><%= x.name%></h2>
+  <%=  x.name %> added on <%= x.created_at %>    <%= x.amount %>
+  <%end%>
+    <%= link_to"add a Transaction ", new_expense_path, class:'border border-black p-2 rounded-lg cursor-pointer hover:opacity-60'%>
+
+     <%= link_to "Back" , categories_path  %>
+</div>

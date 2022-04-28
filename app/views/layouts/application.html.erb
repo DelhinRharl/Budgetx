@@ -15,10 +15,8 @@
   <body>
     <main class="container mx-auto mt-2 px-5 flex flex-col">
       <%=render 'shared/nav' %>
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
       <% flash.each do |type, msg| %>
-        <div>
+        <div class="text-green-400 text-xs md:text-sm font-ligh">
           <%= msg %>
         </div>
       <% end %>
