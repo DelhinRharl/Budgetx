@@ -23,11 +23,11 @@ RSpec.describe 'expenses#index', type: :feature do
       visit(expenses_path(@category.id))
     end
 
-    it 'shows the expense name' do
+    it 'displays right text' do
       expect(page).to have_content('Food')
     end
 
-    it 'shows the expense amount' do
+    it 'displays right amount' do
       expect(page).to have_content('5')
     end
   end

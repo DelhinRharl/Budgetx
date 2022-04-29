@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'categorys#index', type: :feature do
+RSpec.describe 'categories', type: :feature do
   describe 'category' do
     before(:each) do
       @user = User.create(name: 'Kriml', email: 'yay@gmail.com', password: '123456')
@@ -19,11 +19,11 @@ RSpec.describe 'categorys#index', type: :feature do
       visit(categories_path)
     end
 
-    it 'shows the category name' do
+    it 'displays name of the category' do
       expect(page).to have_content('Clothes')
     end
 
-    it 'shows the category amount' do
+    it 'displays amount' do
       expect(page).to have_content('0')
     end
   end
