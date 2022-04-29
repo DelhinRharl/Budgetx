@@ -10,8 +10,6 @@ class User < ApplicationRecord
   has_many :categories
 
   validates :name, presence: true, length: { maximum: 20 }
-  
- 
 
   def admin?(requested_role)
     role == requested_role.to_s
