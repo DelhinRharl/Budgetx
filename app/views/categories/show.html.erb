@@ -1,11 +1,11 @@
 <div class="flex gap-2 flex-col mb-4 ">
  <h2 class="bg-sky-700/70 text-3xl flex text-slate-200 justify-center h-12">Transactions</h4>
  <div class="flex justify-end">
- <p class="bg-green-400 rounded-sm font-semibold" >Total Cost: $<%= @total_cost %></p>
+ <p class="bg-green-400 rounded-sm font-semibold" >Total Cost: $<%= @total_cost %>.00</p>
  </div>
  <% @expense.each_with_index do | x, index|%>
  <%= link_to expense_path(x.id ) do %>
-  <div class=" flex flex-row h-max  border-0 gap-28 bg-white rounded-md  shadow-md shadow-slate-300 p-2 ">
+  <div class=" flex flex-row h-max  border-0 gap-9 bg-white rounded-md  shadow-md shadow-slate-300 p-2 ">
   <% @category.each  do | i|%>
  <img src="<%= i.icon%>" class="h-28 w-28 rounded-sm mr-2" >
     <%end%> 
@@ -14,7 +14,7 @@
   <p> Date: <%= x.created_at.strftime('%d-%m-%Y') %> </p>
   <p> Time: <%= x.created_at.strftime('%H:%M:%S') %> </p>
   </div>
-   <p class="font-light">Cost: $<%= x.amount %> </p>
+   <p class="font-light">Cost: $<%= x.amount %>.00 </p>
    </div>
   <%end%>
   <%end%>

@@ -1,12 +1,11 @@
 <div class="flex gap-2 flex-col mb-4 ">
- <h2 class="bg-blue-500 text-slate-200 h-16 text-4xl flex justify-center">Details</h4>
+ <h2 class="bg-sky-700/70 text-3xl text-slate-200 h-16  flex justify-center">Details</h4>
  <div class="h-40  border-0 gap-2 bg-white rounded-md  shadow-lg shadow-slate-300 p-2 ">
  <div class="flex justify-between w-full">
   <p class="text-black font-semibold">Transaction Cost</p>
   <p class="font-semibold">$<%= @expense.amount %></p>
   </div>
   <h2 class="text-black font-semibold text-xl"><%= @expense.name%></h2>
- <p>Transaction N°</p>
   <p> Date:<%= @expense.created_at.strftime('%d-%m-%Y') %> </p>
   <p> Time:<%= @expense.created_at.strftime( '%H:%M:%S') %> </p>
   </div>

@@ -1,13 +1,14 @@
-<nav class="flex flex-col bg-sky-700/80 h-16 gap-4 items-end  text-sm text-white">
-<div  class="flex gap-4 items-end">
-    <ul class="flex gap-4 items-end">
+<nav class="flex  bg-sky-700/80 h-16 gap-4   text-sm text-white">
+<%=link_to categories_path do%>
+<p class="text-4xl text-gray-200 font-extrabold" >BudgetX </p>
+<%end%>
+    <ul class="flex gap-2 justify-end w-full">
       <% if current_user %>
-        <li  class="font-normal"><%= current_user.name%><span>,</span></li>
-        <li><%= button_to "Sign out", destroy_user_session_path, method: :delete, class: 'hover:opacity-60 font-light'  %></li>
+        <li  class="font-normal text-green-500  "> Hey <%= current_user.name%>!<span>,</span></li>
+        <li><%= button_to "Sign out", destroy_user_session_path, method: :delete, class: 'hover:opacity-60 font-semibold text-black'  %></li>
       <% else %>
         <li><%= link_to "Sign in", new_user_session_path, class: 'hover:opacity-30' %></li>
         <li><%= link_to "Sign up", new_user_registration_path, class: 'hover:opacity-60' %></li>
       <% end %>
     </ul>
-    </div>
   </nav>

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'categorys#index', type: :feature do
@@ -22,7 +24,7 @@ RSpec.describe 'categorys#index', type: :feature do
     end
 
     it 'shows the category amount' do
-        expect(page).to have_content('0')
+      expect(page).to have_content('0')
     end
   end
 end

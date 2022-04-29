@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 RSpec.feature 'Logins', type: :feature do
   background { visit new_user_session_path }

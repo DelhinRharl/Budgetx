@@ -1,9 +1,10 @@
-Rails.application.routes.draw do
+# frozen_string_literal: true
 
+Rails.application.routes.draw do
   devise_for :users
   get '/', to: 'users#index'
-  get '/users', to: 'categories#index'
+  get '/users', to: 'users#index'
 
-    resources :categories 
-    resources :expenses
+  resources :categories
+  resources :expenses
 end

@@ -1,34 +1,36 @@
-<h2>Sign up</h2>
+<div class="flex flex-col my-20 items-center ">
+<h2 class="text-2xl text-sky-700/80 font-normal">Register</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="field">
+  <div class="field mt-3">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+    <%= f.text_field :name, class: "mt-2 w-52 p-2 rounded  border border-cyan-300" %>
   </div>
 
-  <div class="field">
+  <div class="field mt-3">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "mt-2 w-52 p-2 rounded-sm   border border-cyan-300" %>
   </div>
 
-  <div class="field">
+  <div class="field mt-3">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", class: "mt-2 w-52 p-2 rounded-sm border-cyan-300 " %>
   </div>
 
-  <div class="field">
+  <div class="field mt-3">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "mt-2  p-2 w-52 rounded-sm border border-cyan-300" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: "bg-sky-700/80 p-2 border-cyan-300 rounded  mt-4" %>
   </div>
 <% end %>
-
 <%= render "devise/shared/links" %>
+
+</div>
