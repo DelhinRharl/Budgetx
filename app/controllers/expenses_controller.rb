@@ -1,8 +1,19 @@
 class ExpensesController < ApplicationController
+
+  # load_and_authorize_resource
+
   def index
-    @categories = current_user.categories.order(created_at: :desc).all
-    @category = Category.includes(:categories_expenses).where(id: params[:category_id]) 
-    @expense = Expense.all
+   @expenses = current_user.expenses.order(created_at: :desc).all
+    @total_cost = []
+    @category = Category.includes(:categories_expenses).where(id: params[:id])
+    @categories = Category.all
+    @expenses.each do |expense|
+    total = 0
+    expense.categories_expenses.each do |categories_expense|
+    total += categories_expense.expense.amount
+    end
+    @total_cost.push(total)
+    end
   end
 
   def new
@@ -11,9 +22,12 @@ class ExpensesController < ApplicationController
   end
 
   def show
-    @categoryi = Category.find(params[:id])
-    @expense = Expense.includes(:categories_expenses).where(category_id: @categoryi.id)
-    @category = Category.includes(:categories_expenses).where(id: params[:id])
+    @expense = Expense.find(params[:id])
+    @category = Category.find(@expense.category_id)
+    @total_cost = 0
+    @category.categories_expenses.each do |categories_expense|
+      @total_cost += categories_expense.expense.amount
+    end
   end
 
   def create

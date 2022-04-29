@@ -1,12 +1,11 @@
 <div class="flex gap-6 flex-col ">
  <h2 class="bg-teal-500 h-16 text-3xl flex justify-center">Details</h4>
- <% @expense.each_with_index do | x, index|%> 
  <div class="flex justify-between w-80 mt-4 text-lg">
   <p class="text-gray-500">Total Cost</p>
   <p class="font-bold">$<%= @total_cost %></p>
   </div>
-  <h2><%= x.name%></h2>
- <p>Transaction N°<%= index +34120005%></p>
+  <h2><% @expenses.each_with_index do |x, index|%></h2>
+  <p>Transaction N°<%= index+34500011%><%=x.name %></p>
   <p> <%= x.created_at %> </p>
   <p>Transaction Cost: <%= x.amount %> </p>
   <%end%>

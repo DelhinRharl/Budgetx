@@ -1,4 +1,7 @@
 class CategoriesController < ApplicationController
+
+  # load_and_authorize_resource
+
   def index
     @categories = current_user.categories.order(created_at: :desc).all
     @total_cost = []
@@ -14,9 +17,11 @@ class CategoriesController < ApplicationController
 
   def show
     @categoryi = Category.find(params[:id])
-    @expense = Expense.includes(:categories_expenses).where(category_id: @categoryi.id)
+    @expense = Expense.includes(:categories_expenses).order(created_at: :desc).where(category_id: @categoryi.id)
     @category = Category.includes(:categories_expenses).where(id: params[:id])
-  end
+
+    @total_cost = @expense.where(category_id: @categoryi.id).sum(:amount)
+    end
 
   def new
     @category = Category.new
