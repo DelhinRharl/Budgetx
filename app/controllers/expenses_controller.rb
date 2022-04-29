@@ -10,6 +10,12 @@ class ExpensesController < ApplicationController
     @category = Category.all
   end
 
+  def show
+    @categoryi = Category.find(params[:id])
+    @expense = Expense.includes(:categories_expenses).where(category_id: @categoryi.id)
+    @category = Category.includes(:categories_expenses).where(id: params[:id])
+  end
+
   def create
     @new_expense = current_user.expenses.new(expense_params)
     @categories = Category.all

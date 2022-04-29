@@ -1,8 +1,8 @@
-<nav class="flex flex-col bg-blue-500 h-20 items-end rounded-lg text-white">
+<nav class="flex flex-col bg-blue-500 h-20 items-end  text-2xl text-white">
     <ul class="flex gap-4 items-center">
       <% if current_user %>
-        <li  class="font-bold">Bienvenue,<%= current_user.name%><span>,</span></li>
-        <li><%= button_to "Sign out", destroy_user_session_path, method: :delete, class: 'hover:opacity-60'  %></li>
+        <li  class="font-normal"><%= current_user.name%><span>,</span></li>
+        <li><%= button_to "Sign out", destroy_user_session_path, method: :delete, class: 'hover:opacity-60 font-light'  %></li>
       <% else %>
         <li><%= link_to "Sign in", new_user_session_path, class: 'hover:opacity-30' %></li>
         <li><%= link_to "Sign up", new_user_registration_path, class: 'hover:opacity-60' %></li>
