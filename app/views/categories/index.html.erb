@@ -1,0 +1,22 @@
+<div class="flex gap-2 flex-col rounded-lg">
+ <h4 class=" bg-sky-700/70 text-3xl flex text-white justify-center h-12">Categories</h4>
+  <% if @categories.empty? %>
+  <p>No categories yet!</p>
+  <% else %>
+ <% @categories.each do| cate|%>
+<div class=" border h-40 bg-white flex  rounded-md shadow-lg shadow-slate-400 gap-9 items-center"> 
+<div>
+ <%= link_to category_path(cate.id) do %>
+  <img src="<%= cate.icon %> " alt="images" class="h-24 w-24 rounded-sm p-2 ">
+  </div>
+  <p class="text-xl font-semibold"> <%= cate.name %></p>
+  <div>
+  <p> Date: <%= cate.created_at.strftime('%a-%b-%Y') %> </p>
+   </div>
+   </div>
+  <% end %>
+  <% end %>
+  <% end %>
+
+  <%= link_to"Add category ", new_category_path, class:'border border-blue-300 shadow-sm shadow-sky-300 bg-blue-400 p-2 rounded-lg  cursor-pointer hover:bg-blue-500 w-40 justify-center flex '%>
+</div>
