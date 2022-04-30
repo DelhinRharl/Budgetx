@@ -77,6 +77,18 @@ Contributions, issues, and feature requests are welcome!
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+## 🅰️ Acknowledgements
+
+The design template is provided by  
+### Gregoire Vella on Behance.
+From
+### Creative Commons
+
+
+Cheers🎉🎉🎉
+
+
 ## 📝 License
 
 This project is [MIT](./LICENSE.md) licensed.
