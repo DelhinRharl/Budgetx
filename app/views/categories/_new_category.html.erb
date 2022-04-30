@@ -1,0 +1,19 @@
+<div>
+<div class="flex flex-col items-center mt-12">
+<span>
+<%= form_with model: @category do |cat| %>
+    <%= cat.label :name %>
+    <%= cat.text_field :name, require:true,class: 'ml-1 mt-2  w-40 p-1 rounded-md', require: true , placeholder: "Category" %> <br>
+</span>
+<span>
+    <%= cat.label :icon %>
+    <%= cat.text_field :icon, require:true, class: 'ml-4 mt-2  w-40 p-1 rounded-md', require: true , placeholder: "https://...." %><br>
+</span>
+<div class="flex gap-8 mt-2">
+    <%= cat.submit  class:'border border-blue-300 shadow-sm shadow-sky-300 bg-blue-400 p-2 rounded-lg cursor-pointer hover:bg-blue-500 w-40 justify-center flex' %>
+<div>
+
+    <%= link_to "Back", categories_path, class:'border border-blue-300 shadow-sm shadow-sky-300 bg-blue-400 p-2 rounded-lg cursor-pointer hover:bg-blue-500 w-40 justify-center flex'  %>
+    </div>
+<% end %>
+</div>
