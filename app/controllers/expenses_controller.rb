@@ -1,5 +1,5 @@
 class ExpensesController < ApplicationController
-  # load_and_authorize_resource
+  load_and_authorize_resource
 
   def index
     @expenses = current_user.expenses.order(created_at: :desc).all
