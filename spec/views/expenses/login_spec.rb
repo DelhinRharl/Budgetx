@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 RSpec.feature 'Logins', type: :feature do
   background { visit new_user_session_path }
@@ -16,11 +14,6 @@ RSpec.feature 'Logins', type: :feature do
   end
 
   context 'Form Submission' do
-    scenario 'Empty fields' do
-      click_button 'Log in'
-      expect(page).to have_content 'Invalid Email or password.'
-    end
-
     scenario 'wrong password' do
       within 'form' do
         fill_in 'Email', with: 'mymail@gmail.com'
