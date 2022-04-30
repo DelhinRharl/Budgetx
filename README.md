@@ -1,4 +1,4 @@
-# Recipe-App
+# Budget_App
 
 > This is a budget app with backend built using Ruby on Rails framework. It involves creating  item categories and transactions from those categories. The categories have a more detailed page for the specific transaction.
 ## Built With
