@@ -1,6 +1,13 @@
 # Budget_App
 
-> This is a budget app with backend built using Ruby on Rails framework. It involves creating  item categories and transactions from those categories. The categories have a more detailed page for the specific transaction.
+> This is a budget app with backend built using Ruby on Rails framework. It involves creating  item categories and transactions from those categories. The categories have a more detailed page for the specific transaction. this is a handy app for all your daily transactions
+
+## Video Documentation
+[Video](https://www.loom.com/share/a141cf72e1294e80bb68c5d3910c8fdb)
+
+## Live Version
+
+[Live](https://peaceful-mesa-18312.herokuapp.com)
 ## Built With
 
 - Ruby
@@ -73,6 +80,18 @@ Contributions, issues, and feature requests are welcome!
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+## 🅰️ Acknowledgements
+
+The design template is provided by  
+[Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
+
+From
+[Creative Commons](https://creativecommons.org/)
+
+Cheers🎉🎉😊
+
+
 ## 📝 License
 
 This project is [MIT](./LICENSE.md) licensed.
